@@ -3,215 +3,276 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MEI e Pagamentos PGMEI - Informações e Orientações</title>
-  <meta name="description" content="Saiba tudo sobre MEI, PGMEI, DAS, benefícios, obrigações e como emitir pagamentos. Informações completas para microempreendedores individuais.">
-  <meta name="keywords" content="MEI, PGMEI, boleto DAS, microempreendedor individual, formalização MEI, benefícios MEI, ocupações MEI">
+  <title>MEI e PGMEI - Guia Completo para Microempreendedor Individual</title>
+  <meta name="description" content="Guia completo sobre MEI e PGMEI: emissão do DAS, benefícios, requisitos, dúvidas frequentes, termos e política. Conteúdo informativo para microempreendedor individual." />
+  <meta name="keywords" content="MEI, PGMEI, DAS, boleto MEI, emissão DAS, microempreendedor individual, formalização MEI, benefícios MEI, pagar DAS MEI, 2ª via DAS" />
+  <link rel="canonical" href="https://www.seusite.com.br/" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Guia MEI e PGMEI",
+    "url": "https://www.seusite.com.br/",
+    "logo": "https://www.seusite.com.br/logo.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+55-11-99999-9999",
+      "contactType": "customer service",
+      "areaServed": "BR",
+      "availableLanguage": ["Portuguese"]
+    }],
+    "sameAs": [
+      "https://www.facebook.com/seusite",
+      "https://www.instagram.com/seusite"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite (sitelinks) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.seusite.com.br/",
+    "name": "Guia MEI e PGMEI",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.seusite.com.br/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é MEI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MEI é a formalização do trabalhador autônomo que atende requisitos legais e obtém CNPJ, com tributação simplificada e benefícios previdenciários."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é PGMEI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PGMEI é o sistema oficial para emitir, pagar e parcelar o DAS do Microempreendedor Individual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como emitir o DAS do MEI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Acesse o PGMEI, faça login com conta gov.br, selecione o período e gere o boleto DAS para pagamento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que acontece se não pagar o DAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Há incidência de multa e juros, perda temporária de benefícios e risco de irregularidade do CNPJ."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d47a1;
-      color: #fff;
-      line-height: 1.6;
+    :root {
+      --bg: #0d47a1;
+      --header: #1565c0;
+      --card: rgba(255,255,255,0.1);
+      --accent: #ffeb3b;
+      --text: #ffffff;
+      --footer: #0b3c91;
     }
-    header {
-      padding: 20px;
-      text-align: center;
-      background: #1565c0;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    main {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-      background: #1976d2;
-      border-radius: 12px;
-    }
-    h2, h3 {
-      color: #bbdefb;
-    }
-    a {
-      color: #ffeb3b;
-      text-decoration: underline;
-    }
-    footer {
-      padding: 20px;
-      text-align: center;
-      background: #0d47a1;
-      margin-top: 40px;
-    }
-    .button-hidden {
-      background-color: #1976d2;
-      color: #1976d2;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      opacity: 0;
-    }
-    .cookie-banner {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #1565c0;
-      padding: 15px;
-      text-align: center;
-    }
-    .cookie-banner button {
-      background: #ffeb3b;
-      border: none;
-      padding: 8px 12px;
-      margin-left: 10px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 700px;
-      overflow-y: auto;
-      max-height: 80vh;
-    }
-    .close {
-      float: right;
-      cursor: pointer;
-      font-size: 20px;
-      font-weight: bold;
-    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: var(--header); padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2rem; }
+    nav { margin-top: 10px; }
+    nav a { color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold; }
+    .section { padding: 40px 20px; max-width: 980px; margin: 20px auto 0; background: var(--card); border-radius: 12px; }
+    .section h2 { color: var(--accent); margin-top: 0; }
+    .section h3 { color: #bbdefb; }
+    .muted { opacity: .9; }
+    footer { background: var(--footer); padding: 20px; text-align: center; font-size: .95rem; margin-top: 30px; }
+    footer a { color: var(--accent); text-decoration: none; margin: 0 10px; }
+    /* Forms */
+    form label { display: block; margin-top: 10px; }
+    form input, form textarea, form button { width: 100%; padding: 10px; margin-top: 6px; border-radius: 8px; border: none; }
+    form textarea { resize: vertical; }
+    form button { background: var(--accent); color: #000; font-weight: bold; cursor: pointer; }
+    /* Modal */
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); justify-content: center; align-items: center; z-index: 1000; }
+    .modal-content { background: #fff; color: #000; padding: 20px; border-radius: 12px; max-width: 760px; width: 92%; max-height: 80vh; overflow-y: auto; }
+    .close { float: right; font-size: 1.3rem; cursor: pointer; }
+    /* Cookie */
+    #cookieConsent { position: fixed; left: 0; right: 0; bottom: 0; background: #263238; color: #fff; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; gap: 10px; z-index: 1100; }
+    #cookieConsent button { background: var(--accent); color: #000; border: none; padding: 8px 14px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    /* Hidden CTA (conforme pedido) */
+    .button-hidden { background: var(--bg); color: var(--bg); border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; opacity: 0; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>MEI e Pagamentos PGMEI</h1>
-  </header>
 
-  <main>
-    <h2>O que é o MEI e como funciona o PGMEI</h2>
-    <p>O Microempreendedor Individual (MEI) é a forma mais prática e acessível para quem deseja formalizar o próprio negócio. Já o PGMEI é o sistema oficial da Receita Federal para emissão e pagamento do boleto DAS, que mantém suas contribuições em dia.</p>
+<header>
+  <h1>Guia Completo sobre MEI e PGMEI</h1>
+  <nav>
+    <a href="#das">DAS MEI</a>
+    <a href="#beneficios">Benefícios</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+    <a href="#politica" onclick="openModal('politicaModal')">Política</a>
+    <a href="#termos" onclick="openModal('termosModal')">Termos</a>
+  </nav>
+</header>
 
-    <h2>Benefícios do MEI</h2>
-    <ul>
-      <li>Direito a benefícios previdenciários como aposentadoria por idade.</li>
-      <li>Emissão de notas fiscais.</li>
-      <li>Facilidade de acesso a crédito bancário.</li>
-      <li>Carga tributária simplificada e reduzida.</li>
-    </ul>
+<!-- Seção DAS -->
+<section id="das" class="section">
+  <h2>Como Emitir e Pagar o DAS MEI</h2>
+  <p class="muted">O Documento de Arrecadação do Simples Nacional (DAS) é a guia mensal obrigatória do MEI. Pelo PGMEI você pode emitir o boleto online, gerar 2ª via e parcelar débitos em atraso para manter o CNPJ regular.</p>
+  <ul>
+    <li>Acesse o PGMEI (portal oficial) e faça login com sua conta gov.br.</li>
+    <li>Selecione o período desejado e gere a guia mensal do DAS.</li>
+    <li>Pague via internet banking, aplicativos ou casas lotéricas.</li>
+    <li>Em caso de atraso, utilize a opção de parcelamento disponibilizada pelo sistema.</li>
+  </ul>
+  <button class="button-hidden">CTA Oculto</button>
+</section>
 
-    <h2>Obrigações do MEI</h2>
-    <p>O MEI deve pagar mensalmente o DAS (Documento de Arrecadação do Simples Nacional), manter a declaração anual em dia e cumprir com suas obrigações fiscais. Isso garante o acesso aos benefícios e evita problemas legais.</p>
+<!-- Seção Benefícios / Antes de se tornar MEI -->
+<section id="beneficios" class="section">
+  <h2>O que você precisa saber antes de se tornar um MEI</h2>
+  <p>Alguns benefícios poderão ser impactados após a formalização como MEI. Verifique se você recebe algum dos itens listados abaixo.</p>
 
-    <h2>O que você precisa saber antes de se tornar um MEI?</h2>
-    <p>Alguns benefícios poderão ser impactados após a sua formalização como MEI. Veja se você recebe algum desses:</p>
+  <h3>Benefícios previdenciários que serão cancelados</h3>
+  <ul>
+    <li>Aposentadoria por invalidez.</li>
+    <li>Auxílio-doença ou salário maternidade.</li>
+  </ul>
 
-    <h3>Benefícios previdenciários que serão cancelados</h3>
-    <ul>
-      <li>Aposentadoria por invalidez.</li>
-      <li>Auxílio-doença ou salário maternidade.</li>
-    </ul>
+  <h3>Benefícios assistenciais que podem ser cancelados</h3>
+  <ul>
+    <li>Seguro desemprego.</li>
+    <li>BPC-LOAS.</li>
+    <li>Prouni, FIES.</li>
+  </ul>
 
-    <h3>Benefícios assistenciais que podem ser cancelados</h3>
-    <ul>
-      <li>Seguro desemprego.</li>
-      <li>BPC-LOAS.</li>
-      <li>Prouni, FIES.</li>
-    </ul>
+  <h3>Benefícios que NÃO serão cancelados</h3>
+  <ul>
+    <li>Aposentadoria especial por insalubridade, idade ou por tempo de contribuição.</li>
+    <li>Fundo de Garantia por Tempo de Serviço (FGTS).</li>
+    <li>Programa de Integração Social (PIS).</li>
+    <li>Pensão por falecimento do cônjuge/filho ou dos pais.</li>
+    <li>Pensão recebida por tutor de menor de idade, por morte do responsável.</li>
+  </ul>
 
-    <h3>Benefícios que NÃO serão cancelados</h3>
-    <ul>
-      <li>Aposentadoria especial por insalubridade, idade ou por tempo de contribuição.</li>
-      <li>Fundo de Garantia por Tempo de Serviço (FGTS).</li>
-      <li>Programa de Integração Social (PIS).</li>
-      <li>Pensão por falecimento de cônjuge, pais ou filhos.</li>
-      <li>Pensão recebida por tutor de menor de idade, por morte do responsável.</li>
-    </ul>
+  <h3>Observações importantes</h3>
+  <ul>
+    <li>Beneficiários do Bolsa Família devem observar os critérios do Programa "Bolsa Família".</li>
+    <li>Servidor Público Federal não pode ser MEI (Lei nº 8112/90). Servidores Estaduais e Municipais devem observar a legislação local.</li>
+  </ul>
 
-    <h3>Observações importantes</h3>
-    <p>Beneficiários do Bolsa Família devem observar os critérios do programa. Servidor Público Federal não pode ser MEI (Lei nº 8112/90). Já os servidores estaduais e municipais devem verificar a legislação própria.</p>
+  <h3>Requisitos para ser MEI</h3>
+  <ul>
+    <li>Exercer atividades que estejam na lista de ocupações permitidas para o MEI.</li>
+    <li>Contratar, no máximo, um empregado que receba o piso da categoria ou um salário mínimo.</li>
+    <li>Não ser titular, sócio ou administrador de outra empresa e não ter/abrir filial.</li>
+    <li>Faturamento anual de até R$ 81.000,00* ou até R$ 251.600,00* para transportador autônomo de cargas (tabela B, Anexo XI da Resolução CGSN nº 140/2018).</li>
+  </ul>
+  <p class="muted">*Se você abrir um MEI após janeiro, o limite de faturamento é ajustado proporcionalmente ao número de meses de atividade no ano.</p>
+</section>
 
-    <h3>Requisitos para ser MEI</h3>
-    <ul>
-      <li>Exercer atividades que estejam na lista de ocupações permitidas para o MEI.</li>
-      <li>Contratar no máximo um empregado.</li>
-      <li>Não ser sócio ou administrador de outra empresa.</li>
-      <li>Ter faturamento anual de até R$ 81.000,00 (ou até R$ 251.600,00 para transportador autônomo de cargas).</li>
-    </ul>
+<!-- FAQ -->
+<section id="faq" class="section">
+  <h2>Perguntas Frequentes (FAQ)</h2>
+  <h3>O que é MEI?</h3>
+  <p>É a formalização do trabalhador autônomo que atende aos requisitos legais. Permite CNPJ, emissão de notas e benefícios previdenciários.</p>
+  <h3>O que é PGMEI?</h3>
+  <p>Sistema online oficial para emitir, pagar e parcelar o DAS do MEI.</p>
+  <h3>O que acontece se eu não pagar o DAS?</h3>
+  <p>Incidem multa e juros; você pode perder benefícios temporariamente e ficar irregular.</p>
+</section>
 
-    <h2>Perguntas Frequentes</h2>
-    <h3>Como emitir o boleto DAS?</h3>
-    <p>Acesse o portal do PGMEI, faça login com sua conta gov.br e emita o boleto mensal.</p>
-    <h3>O que acontece se eu atrasar o pagamento?</h3>
-    <p>O boleto em atraso gera multa e juros. Quanto antes regularizar, menor o valor adicional.</p>
-    <h3>Preciso de contador para ser MEI?</h3>
-    <p>Não é obrigatório, mas pode ajudar na organização e cumprimento de obrigações.</p>
+<!-- Contato -->
+<section id="contato" class="section">
+  <h2>Fale Conosco</h2>
+  <form aria-label="Formulário de contato">
+    <label for="nome">Nome</label>
+    <input id="nome" name="nome" type="text" required>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
 
-    <button class="button-hidden">Botão Oculto</button>
-  </main>
-
-  <footer>
-    <p><a href="#" onclick="openModal('termosModal')">Termos de Uso</a> | <a href="#" onclick="openModal('privacidadeModal')">Política de Privacidade</a> | <a href="#" onclick="openModal('contatoModal')">Contato</a></p>
-    <p>&copy; 2025 - Informações sobre MEI e PGMEI. Este site não possui vínculo com a Receita Federal.</p>
-  </footer>
-
-  <div class="cookie-banner" id="cookieBanner">
-    Este site usa cookies para melhorar sua experiência.
-    <button onclick="aceitarCookies()">Aceitar</button>
+<!-- Modal Política -->
+<div id="politicaModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloPolitica">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('politicaModal')" aria-label="Fechar">&times;</span>
+    <h2 id="tituloPolitica">Política de Privacidade</h2>
+    <p>Respeitamos sua privacidade conforme a LGPD. Utilizamos cookies para melhorar a experiência. Não vendemos dados e apenas compartilhamos quando exigido por lei.</p>
   </div>
+</div>
 
-  <!-- Modals -->
-  <div class="modal" id="termosModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('termosModal')">&times;</span>
-      <h2>Termos de Uso</h2>
-      <p>Estes termos descrevem as condições de uso do site e serviços relacionados a informações sobre MEI e PGMEI. Ao continuar navegando, você concorda com as regras aqui descritas.</p>
-    </div>
+<!-- Modal Termos -->
+<div id="termosModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloTermos">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('termosModal')" aria-label="Fechar">&times;</span>
+    <h2 id="tituloTermos">Termos de Uso</h2>
+    <p>O uso deste site implica concordância com nossos termos. Conteúdo meramente informativo, sem vínculo com a Receita Federal. Recomendamos sempre consultar fontes oficiais.</p>
   </div>
+</div>
 
-  <div class="modal" id="privacidadeModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('privacidadeModal')">&times;</span>
-      <h2>Política de Privacidade</h2>
-      <p>Este site respeita sua privacidade e não coleta dados pessoais sem consentimento. Qualquer informação fornecida será utilizada apenas para fins de contato ou suporte.</p>
-    </div>
-  </div>
+<!-- Cookie Consent -->
+<div id="cookieConsent" role="region" aria-label="Aviso de cookies">
+  <span>Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#politica" onclick="openModal('politicaModal')" style="color:#fff; text-decoration: underline;">Política de Privacidade</a>.</span>
+  <button onclick="acceptCookies()">Aceitar</button>
+</div>
 
-  <div class="modal" id="contatoModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('contatoModal')">&times;</span>
-      <h2>Contato</h2>
-      <p>Entre em contato pelo email: suporte.mei@gmail.com</p>
-    </div>
-  </div>
+<footer>
+  <p>&copy; 2025 - Guia MEI e PGMEI. Este site é informativo e <strong>não possui vínculo com a Receita Federal do Brasil</strong>.</p>
+  <p>
+    <a href="#politica" onclick="openModal('politicaModal')">Política de Privacidade</a> |
+    <a href="#termos" onclick="openModal('termosModal')">Termos de Uso</a> |
+    <a href="#contato">Contato</a>
+  </p>
+</footer>
 
-  <script>
-    function aceitarCookies() {
-      document.getElementById('cookieBanner').style.display = 'none';
-      localStorage.setItem('cookiesAceitos', 'true');
+<script>
+  // Modal controls
+  function openModal(id){ document.getElementById(id).style.display = 'flex'; }
+  function closeModal(id){ document.getElementById(id).style.display = 'none'; }
+  window.addEventListener('click', function(e){
+    const modals = ['politicaModal','termosModal'];
+    modals.forEach(function(id){ if(e.target === document.getElementById(id)) closeModal(id); });
+  });
+
+  // Cookie consent
+  function acceptCookies(){
+    document.getElementById('cookieConsent').style.display = 'none';
+    document.cookie = 'cookies_accepted=true; path=/; max-age=' + (60*60*24*365);
+    localStorage.setItem('cookiesAccepted','true');
+  }
+  (function(){
+    if(document.cookie.includes('cookies_accepted=true') || localStorage.getItem('cookiesAccepted')==='true'){
+      document.getElementById('cookieConsent').style.display = 'none';
     }
-    if(localStorage.getItem('cookiesAceitos')) {
-      document.getElementById('cookieBanner').style.display = 'none';
-    }
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
+  })();
+</script>
+
 </body>
 </html>
